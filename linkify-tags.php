@@ -7,7 +7,7 @@ Author: Scott Reilly
 Author URI: http://coffee2code.com
 Description: Turn a list of tag IDs and/or slugs into a list of links to those tags.
 
-Compatible with WordPress 2.5+, 2.6+, 2.7+.
+Compatible with WordPress 2.5+, 2.6+, 2.7+, 2.8+.
 
 =>> Read the accompanying readme.txt file for more information.  Also, visit the plugin's homepage
 =>> for more information and the latest updates
