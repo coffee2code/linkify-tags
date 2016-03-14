@@ -1,40 +1,51 @@
 <?php
 
+defined( 'ABSPATH' ) or die();
+
 class Linkify_Tags_Test extends WP_UnitTestCase {
 
 	private static $tag_ids = array();
 
-	function setUp() {
+	public function setUp() {
 		parent::setUp();
 		$this->tag_ids = $this->factory->tag->create_many( 5 );
 	}
 
 
-	/*
-	 *
-	 * HELPER FUNCTIONS
-	 *
-	 */
+	//
+	//
+	// HELPER FUNCTIONS
+	//
+	//
 
 
-	function get_slug( $tag_id ) {
+	protected function get_slug( $tag_id ) {
 		return get_tag( $tag_id )->slug;
 	}
 
-	function expected_output( $count, $lowest_id, $between = ', ', $tag_num = 1 ) {
+	/**
+	 * Returns the expected output.
+	 *
+	 * @param int    $count     The number of tags to list.
+	 * @param int    $tag_index Optional. The index into the $tag_ids array to start at. Default 0.
+	 * @param string $between   Optional. The string to appear between tags. Default ', '.
+	 * @param int    $tag_num   Optional. The tag number. Default 1.
+	 * @return string
+	 */
+	protected function expected_output( $count, $tag_index = 0, $between = ', ', $tag_num = 1 ) {
 		$str = '';
-		$j = $lowest_id;
-		for ( $n = 1, $i = $tag_num; $n <= $count; $n++, $i++ ) {
+		for ( $n = 1; $n <= $count; $n++, $tag_index++ ) {
 			if ( ! empty( $str ) ) {
 				$str .= $between;
 			}
-			$str .= '<a href="http://example.org/?tag=term-' . $i . '" title="View all posts in Term ' . $i . '">Term ' . $i . '</a>';
+			$tag = get_term( $this->tag_ids[ $tag_index ] );
+			$str .= '<a href="http://example.org/?tag=' . $tag->slug . '" title="View all posts in ' . $tag->name . '">' . $tag->name . '</a>';
 			$j++;
 		}
 		return $str;
 	}
 
-	function get_results( $args, $direct_call = true, $use_deprecated = false ) {
+	protected function get_results( $args, $direct_call = true, $use_deprecated = false ) {
 		ob_start();
 
 		$function = $use_deprecated ? 'linkify_tags' : 'c2c_linkify_tags';
@@ -51,78 +62,94 @@ class Linkify_Tags_Test extends WP_UnitTestCase {
 	}
 
 
-	/*
-	 *
-	 * TESTS
-	 *
-	 */
+	//
+	//
+	// TESTS
+	//
+	//
 
 
-	function test_single_id() {
-		$this->assertEquals( $this->expected_output( 1, $this->tag_ids[0] ), $this->get_results( array( $this->tag_ids[0] ) ) );
-		$this->assertEquals( $this->expected_output( 1, $this->tag_ids[0] ), $this->get_results( array( $this->tag_ids[0], false ) ) );
+	public function test_widget_class_name() {
+		$this->assertTrue( class_exists( 'c2c_LinkifyTagsWidget' ) );
 	}
 
-	function test_array_of_ids() {
-		$this->assertEquals( $this->expected_output( 5, $this->tag_ids[0] ), $this->get_results( array( $this->tag_ids ) ) );
-		$this->assertEquals( $this->expected_output( 5, $this->tag_ids[0] ), $this->get_results( array( $this->tag_ids ), false ) );
+	public function test_widget_version() {
+		$this->assertEquals( '004', c2c_LinkifyTagsWidget::version() );
 	}
 
-	function test_single_slug() {
+	public function test_widget_hooks_widgets_init() {
+		$this->assertEquals( 10, has_filter( 'widgets_init', array( 'c2c_LinkifyTagsWidget', 'register_widget' ) ) );
+	}
+
+	public function test_widget_made_available() {
+		$this->assertContains( 'c2c_LinkifyTagsWidget', array_keys( $GLOBALS['wp_widget_factory']->widgets ) );
+	}
+
+	public function test_single_id() {
+		$this->assertEquals( $this->expected_output( 1 ), $this->get_results( array( $this->tag_ids[0] ) ) );
+		$this->assertEquals( $this->expected_output( 1 ), $this->get_results( array( $this->tag_ids[0], false ) ) );
+	}
+
+	public function test_array_of_ids() {
+		$this->assertEquals( $this->expected_output( 5 ), $this->get_results( array( $this->tag_ids ) ) );
+		$this->assertEquals( $this->expected_output( 5 ), $this->get_results( array( $this->tag_ids ), false ) );
+	}
+
+	public function test_single_slug() {
 		$tag = get_tag( $this->tag_ids[0] );
-		$this->assertEquals( $this->expected_output( 1, $tag->term_id ), $this->get_results( array( $tag->slug ) ) );
+		$this->assertEquals( $this->expected_output( 1 ), $this->get_results( array( $tag->slug ) ) );
 	}
 
-	function test_array_of_slugs() {
+	public function test_array_of_slugs() {
 		$tag_slugs = array_map( array( $this, 'get_slug' ), $this->tag_ids );
-		$this->assertEquals( $this->expected_output( 5, $this->tag_ids[0] ), $this->get_results( array( $tag_slugs ) ) );
-		$this->assertEquals( $this->expected_output( 5, $this->tag_ids[0] ), $this->get_results( array( $tag_slugs ), false ) );
+		$this->assertEquals( $this->expected_output( 5 ), $this->get_results( array( $tag_slugs ) ) );
+		$this->assertEquals( $this->expected_output( 5 ), $this->get_results( array( $tag_slugs ), false ) );
 	}
 
-	function test_all_empty_tags() {
+	public function test_all_empty_tags() {
 		$this->assertEmpty( $this->get_results( array( '' ) ) );
 		$this->assertEmpty( $this->get_results( array( array() ) ) );
 		$this->assertEmpty( $this->get_results( array( array( array(), '' ) ) ) );
 	}
 
-	function test_an_empty_tag() {
+	public function test_an_empty_tag() {
 		$tag_ids = array_merge( array( '' ), $this->tag_ids );
-		$this->assertEquals( $this->expected_output( 5, $this->tag_ids[0] ), $this->get_results( array( $tag_ids ) ) );
-		$this->assertEquals( $this->expected_output( 5, $this->tag_ids[0] ), $this->get_results( array( $tag_ids ), false ) );
+		$this->assertEquals( $this->expected_output( 5 ), $this->get_results( array( $tag_ids ) ) );
+		$this->assertEquals( $this->expected_output( 5 ), $this->get_results( array( $tag_ids ), false ) );
 	}
 
-	function test_all_invalid_tags() {
+	public function test_all_invalid_tags() {
 		$this->assertEmpty( $this->get_results( array( 99999999 ) ) );
 		$this->assertEmpty( $this->get_results( array( 'not-a-tag' ) ) );
 		$this->assertEmpty( $this->get_results( array( 'not-a-tag' ), false ) );
 	}
 
-	function test_an_invalid_tag() {
+	public function test_an_invalid_tag() {
 		$tag_ids = array_merge( array( 99999999 ), $this->tag_ids );
-		$this->assertEquals( $this->expected_output( 5, $this->tag_ids[0] ), $this->get_results( array( $tag_ids ) ) );
-		$this->assertEquals( $this->expected_output( 5, $this->tag_ids[0] ), $this->get_results( array( $tag_ids ), false ) );
+		$this->assertEquals( $this->expected_output( 5 ), $this->get_results( array( $tag_ids ) ) );
+		$this->assertEquals( $this->expected_output( 5 ), $this->get_results( array( $tag_ids ), false ) );
 	}
 
-	function test_arguments_before_and_after() {
-		$expected = '<div>' . $this->expected_output( 5, $this->tag_ids[0] ) . '</div>';
+	public function test_arguments_before_and_after() {
+		$expected = '<div>' . $this->expected_output( 5 ) . '</div>';
 		$this->assertEquals( $expected, $this->get_results( array( $this->tag_ids, '<div>', '</div>' ) ) );
 		$this->assertEquals( $expected, $this->get_results( array( $this->tag_ids, '<div>', '</div>' ), false ) );
 	}
 
-	function test_argument_between() {
-		$expected = '<ul><li>' . $this->expected_output( 5, $this->tag_ids[0], '</li><li>' ) . '</li></ul>';
+	public function test_argument_between() {
+		$expected = '<ul><li>' . $this->expected_output( 5, 0, '</li><li>' ) . '</li></ul>';
 		$this->assertEquals( $expected, $this->get_results( array( $this->tag_ids, '<ul><li>', '</li></ul>', '</li><li>' ) ) );
 		$this->assertEquals( $expected, $this->get_results( array( $this->tag_ids, '<ul><li>', '</li></ul>', '</li><li>' ), false ) );
 	}
 
-	function test_argument_before_last() {
+	public function test_argument_before_last() {
 		$before_last = ', and ';
-		$expected = $this->expected_output( 4, $this->tag_ids[0] ) . $before_last . $this->expected_output( 1, $this->tag_ids[4], ', ', 5 );
+		$expected = $this->expected_output( 4 ) . $before_last . $this->expected_output( 1, 4, ', ', 5 );
 		$this->assertEquals( $expected, $this->get_results( array( $this->tag_ids, '', '', ', ', $before_last ) ) );
 		$this->assertEquals( $expected, $this->get_results( array( $this->tag_ids, '', '', ', ', $before_last ), false ) );
 	}
 
-	function test_argument_none() {
+	public function test_argument_none() {
 		$missing = 'No tags to list.';
 		$expected = '<ul><li>' . $missing . '</li></ul>';
 		$this->assertEquals( $expected, $this->get_results( array( array(), '<ul><li>', '</li></ul>', '</li><li>', '', $missing ) ) );
@@ -132,13 +159,13 @@ class Linkify_Tags_Test extends WP_UnitTestCase {
 	/**
 	 * @expectedDeprecated linkify_tags
 	 */
-	function test_deprecated_function() {
-		$this->assertEquals( $this->expected_output( 1, $this->tag_ids[0] ), $this->get_results( array( $this->tag_ids[0] ), false, true ) );
-		$this->assertEquals( $this->expected_output( 5, $this->tag_ids[0] ), $this->get_results( array( $this->tag_ids ), false, true ) );
+	public function test_deprecated_function() {
+		$this->assertEquals( $this->expected_output( 1 ), $this->get_results( array( $this->tag_ids[0] ), false, true ) );
+		$this->assertEquals( $this->expected_output( 5 ), $this->get_results( array( $this->tag_ids ), false, true ) );
 		$tag = get_tag( $this->tag_ids[0] );
-		$this->assertEquals( $this->expected_output( 1, $tag->term_id ), $this->get_results( array( $tag->slug ), false, true ) );
+		$this->assertEquals( $this->expected_output( 1 ), $this->get_results( array( $tag->slug ), false, true ) );
 		$tag_slugs = array_map( array( $this, 'get_slug' ), $this->tag_ids );
-		$this->assertEquals( $this->expected_output( 5, $this->tag_ids[0] ), $this->get_results( array( $tag_slugs ), false, true ) );
+		$this->assertEquals( $this->expected_output( 5 ), $this->get_results( array( $tag_slugs ), false, true ) );
 	}
 
 }
