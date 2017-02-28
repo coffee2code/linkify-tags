@@ -148,7 +148,9 @@ Do:
 == Changelog ==
 
 = () =
-* Fix: Fix unit tests by not declaring test class variable as static
+* Fix: Bug fixes for unit tests
+    * Don't declaring test class variable as static
+    * Remove iteration of nonexistent variable
 * Change: Update unit test bootstrap
     * Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable
     * Enable more error output for unit tests

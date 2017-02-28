@@ -40,7 +40,6 @@ class Linkify_Tags_Test extends WP_UnitTestCase {
 			}
 			$tag = get_term( $this->tag_ids[ $tag_index ] );
 			$str .= '<a href="http://example.org/?tag=' . $tag->slug . '" title="View all posts in ' . $tag->name . '">' . $tag->name . '</a>';
-			$j++;
 		}
 		return $str;
 	}
