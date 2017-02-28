@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
 Tested up to: 4.7
-Stable tag: 2.2
+Stable tag: 2.2.1
 
 Turn a list of tag IDs and/or slugs into a list of links to those tags. Provides a widget and template tag.
 
@@ -148,7 +148,7 @@ Do:
 
 == Changelog ==
 
-= () =
+= 2.2.1 (2017-02-27) =
 * Fix: Bug fixes for unit tests
     * Don't declaring test class variable as static
     * Remove iteration of nonexistent variable
@@ -262,6 +262,9 @@ Do:
 
 
 == Upgrade Notice ==
+
+= 2.2.1 =
+Trivial update: fixed some unit tests, noted compatibility through WP 4.7+, updated copyright date
 
 = 2.2 =
 Minor update: minor updates to widget code and unit tests; verified compatibility through WP 4.4; updated copyright date (2016).
