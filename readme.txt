@@ -150,6 +150,7 @@ Do:
 = () =
 * Change: Update unit test bootstrap
     * Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable
+    * Enable more error output for unit tests
 
 = 2.2 (2016-03-14) =
 * Change: Update widget to 004:
