@@ -8,7 +8,7 @@ Requires at least: 3.3
 Tested up to: 4.7
 Stable tag: 2.2
 
-Turn a list of tag IDs and/or slugs into a list of links to those tags. Includes widget and template tag.
+Turn a list of tag IDs and/or slugs into a list of links to those tags. Provides a widget and template tag.
 
 == Description ==
 
@@ -19,9 +19,10 @@ Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/linkify-tags/) | [Plu
 
 == Installation ==
 
-1. Unzip `linkify-tags.zip` inside the `/wp-content/plugins/` directory for your site (or install via the built-in WordPress plugin installer)
-1. Activate the plugin through the 'Plugins' admin menu in WordPress
-1. Use the c2c_linkify_tags() template tag in one of your templates (be sure to pass it at least the first argument indicating what tag IDs and/or slugs to linkify -- the argument can be an array, a space-separate list, or a comma-separated list). Other optional arguments are available to customize the output.
+1. Install via the built-in WordPress plugin installer. Or download and unzip `linkify-tags.zip` inside the plugins directory for your site (typically `wp-content/plugins/`)
+2. Activate the plugin through the 'Plugins' admin menu in WordPress
+3. Optional: Use the `c2c_linkify_tags()` template tag in one of your templates (be sure to pass it at least the first argument indicating what tag IDs and/or slugs to linkify -- the argument can be an array, a space-separate list, or a comma-separated list). Other optional arguments are available to customize the output.
+4. Optional: Use the "Linkify Tags" widget in one of the sidebar provided by your theme.
 
 
 == Screenshots ==
@@ -155,6 +156,7 @@ Do:
     * Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable
     * Enable more error output for unit tests
 * Change: Note compatibility through WP 4.7+
+* Change: Minor readme.txt content and formatting tweaks
 * Change: Update copyright date (2017)
 
 = 2.2 (2016-03-14) =
