@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die();
 
 class Linkify_Tags_Test extends WP_UnitTestCase {
 
-	private static $tag_ids = array();
+	private $tag_ids = array();
 
 	public function setUp() {
 		parent::setUp();
