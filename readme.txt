@@ -5,7 +5,7 @@ Tags: tags, link, linkify, archives, list, widget, template tag, coffee2code
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
-Tested up to: 4.7
+Tested up to: 5.1
 Stable tag: 2.2.1
 
 Turn a list of tag IDs and/or slugs into a list of links to those tags. Provides a widget and template tag.
@@ -149,6 +149,7 @@ Do:
 == Changelog ==
 
 = () =
+* Change: Note compatibility through WP 5.1+
 * Change: Update copyright date (2019)
 * Change: Update License URI to be HTTPS
 
