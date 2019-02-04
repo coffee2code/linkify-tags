@@ -149,6 +149,7 @@ Do:
 == Changelog ==
 
 = () =
+* Change: Escape text used in markup attributes (hardening)
 * Change: Add GitHub link to readme
 * Change: Unit tests: Minor whitespace tweaks to bootstrap
 * Change: Rename readme.txt section from 'Filters' to 'Hooks'

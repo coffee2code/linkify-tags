@@ -87,9 +87,9 @@ function c2c_linkify_tags( $tags, $before = '', $after = '', $between = ', ', $b
 			if ( $title ) {
 				$links[] = sprintf(
 					'<a href="%1$s" title="%2$s">%3$s</a>',
-					get_tag_link( $id ),
+					esc_url( get_tag_link( $id ) ),
 					esc_attr( sprintf( __( "View all posts in %s" ), $title ) ),
-					$title
+					esc_attr( $title )
 				);
 			}
 		}
