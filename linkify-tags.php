@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Linkify Tags
- * Version:     2.2.1
+ * Version:     2.2.2
  * Plugin URI:  http://coffee2code.com/wp-plugins/linkify-tags/
  * Author:      Scott Reilly
  * Author URI:  http://coffee2code.com/
@@ -18,7 +18,7 @@
  *
  * @package Linkify_Tags
  * @author  Scott Reilly
- * @version 2.2.1
+ * @version 2.2.2
  */
 
 /*
