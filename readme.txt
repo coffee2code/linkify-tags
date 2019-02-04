@@ -8,7 +8,7 @@ Requires at least: 3.3
 Tested up to: 5.1
 Stable tag: 2.2.1
 
-Turn a list of tag IDs and/or slugs into a list of links to those tags. Provides a widget and template tag.
+Turn a string, list, or array of tag IDs and/or slugs into a list of links to those tags. Provides a widget and template tag.
 
 == Description ==
 
@@ -157,6 +157,7 @@ Do:
 * Change: Modify formatting of hook name in readme to prevent being uppercased when shown in the Plugin Directory
 * Change: Note compatibility through WP 5.1+
 * Change: Update copyright date (2019)
+* Change: Tweak plugin description
 * Change: Update License URI to be HTTPS
 
 = 2.2.1 (2017-02-27) =
