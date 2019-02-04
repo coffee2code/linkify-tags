@@ -2,7 +2,7 @@
 /**
  * Linkify Tags plugin widget code
  *
- * Copyright (c) 2011-2017 by Scott Reilly (aka coffee2code)
+ * Copyright (c) 2011-2019 by Scott Reilly (aka coffee2code)
  *
  * @package Linkify_Tags_Widget
  * @author  Scott Reilly
