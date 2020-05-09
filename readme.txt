@@ -14,7 +14,7 @@ Turn a string, list, or array of tag IDs and/or slugs into a list of links to th
 
 The plugin provides a widget called "Linkify Tags" as well as a template tag, `c2c_linkify_tags()`, which allow you to easily specify tags to list and how to list them. Tags are specified by either ID or slug. See other parts of the documentation for example usage and capabilities.
 
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/linkify-tags/) | [Plugin Directory Page](https://wordpress.org/plugins/linkify-tags/) | [GitHub](https://github.com/coffee2code/linkify-tags/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](https://coffee2code.com/wp-plugins/linkify-tags/) | [Plugin Directory Page](https://wordpress.org/plugins/linkify-tags/) | [GitHub](https://github.com/coffee2code/linkify-tags/) | [Author Homepage](https://coffee2code.com)
 
 
 == Installation ==
