@@ -104,13 +104,13 @@ A single tag ID/slug, or multiple tag IDs/slugs defined via an array, or multipl
 
 Outputs something like:
 
-`<a href="http://yourblog.com/archives/tags/books">Books</a>, <a href="http://yourblog.com/archives/tags/movies">Movies</a>`
+`<a href="https://example.com/archives/tags/books">Books</a>, <a href="https://example.com/archives/tags/movies">Movies</a>`
 
 * `<?php c2c_linkify_tags("43, 92", "<li>", "</li>", "</li><li>"); ?></ul>`
 
 Outputs something like:
 
-`<ul><li><a href="http://yourblog.com/archives/tags/books">Books</a></li><li><a href="http://yourblog.com/archives/tags/movies">Movies</a></li></ul>`
+`<ul><li><a href="https://example.com/archives/tags/books">Books</a></li><li><a href="https://example.com/archives/tags/movies">Movies</a></li></ul>`
 
 * `<?php c2c_linkify_tags(""); // Assume you passed an empty string as the first value ?>`
 
