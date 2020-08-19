@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
 Tested up to: 5.5
-Stable tag: 2.2.4
+Stable tag: 2.2.5
 
 Turn a string, list, or array of tag IDs and/or slugs into a list of links to those tags. Provides a widget and template tag.
 
@@ -148,6 +148,16 @@ Do:
 
 == Changelog ==
 
+= 2.2.5 (2020-08-18) =
+* New: Add TODO.md for newly added potential TODO items
+* Change: Restructure unit test file structure
+    * New: Create new subdirectory `phpunit/` to house all files related to unit testing
+    * Change: Move `bin/` to `phpunit/bin/`
+    * Change: Move `tests/bootstrap.php` to `phpunit/`
+    * Change: Move `tests/` to `phpunit/tests/`
+    * Change: Rename `phpunit.xml` to `phpunit.xml.dist` per best practices
+* Change: Note compatibility through WP 5.5+
+
 = 2.2.4 (2020-05-08) =
 * Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests
 * Change: Note compatibility through WP 5.4+
@@ -162,22 +172,13 @@ Do:
 * Change: Update copyright date (2020)
 * Change: Split paragraph in README.md's "Support" section into two
 
-= 2.2.2 (2019-02-03) =
-* New: Add README.md
-* Change: Escape text used in markup attributes (hardening)
-* Change: Add GitHub link to readme
-* Change: Unit tests: Minor whitespace tweaks to bootstrap
-* Change: Rename readme.txt section from 'Filters' to 'Hooks'
-* Change: Modify formatting of hook name in readme to prevent being uppercased when shown in the Plugin Directory
-* Change: Note compatibility through WP 5.1+
-* Change: Update copyright date (2019)
-* Change: Tweak plugin description
-* Change: Update License URI to be HTTPS
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/linkify-tags/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.2.5 =
+Trivial update: Restructured unit test file structure, added a TODO.md file, and noted compatibility through WP 5.5+.
 
 = 2.2.4 =
 Trivial update: Updated a few URLs to be HTTPS and noted compatibility through WP 5.4+.
