@@ -1,6 +1,7 @@
 # Changelog
 
 ## _(in-progress)_
+* New: Add TODO.md for newly added potential TODO items
 * Change: Note compatibility through WP 5.5+
 
 ## 2.2.4 _(2020-05-08)_
