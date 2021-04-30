@@ -82,23 +82,24 @@ A single tag ID/slug, or multiple tag IDs/slugs defined via an array, or multipl
 
 * These are all valid calls:
 
-`<?php c2c_linkify_tags(43); ?>`
-`<?php c2c_linkify_tags("43"); ?>`
-`<?php c2c_linkify_tags("books"); ?>`
-`<?php c2c_linkify_tags("43 92 102"); ?>`
-`<?php c2c_linkify_tags("book movies programming-notes"); ?>`
-`<?php c2c_linkify_tags("book 92 programming-notes"); ?>`
-`<?php c2c_linkify_tags("43,92,102"); ?>`
-`<?php c2c_linkify_tags("book,movies,programming-notes"); ?>`
-`<?php c2c_linkify_tags("book,92,programming-notes"); ?>`
-`<?php c2c_linkify_tags("43, 92, 102"); ?>`
-`<?php c2c_linkify_tags("book, movies, programming-notes"); ?>`
-`<?php c2c_linkify_tags("book, 92, programming-notes"); ?>`
-`<?php c2c_linkify_tags(array(43,92,102)); ?>`
-`<?php c2c_linkify_tags(array("43","92","102")); ?>`
-`<?php c2c_linkify_tags(array("book","movies","programming-notes")); ?>`
-`<?php c2c_linkify_tags(array("book",92,"programming-notes")); ?>`
+`<?php c2c_linkify_tags(43); ?>
+<?php c2c_linkify_tags("43"); ?>
+<?php c2c_linkify_tags("books"); ?>
+<?php c2c_linkify_tags("43 92 102"); ?>
+<?php c2c_linkify_tags("book movies programming-notes"); ?>
+<?php c2c_linkify_tags("book 92 programming-notes"); ?>
+<?php c2c_linkify_tags("43,92,102"); ?>
+<?php c2c_linkify_tags("book,movies,programming-notes"); ?>
+<?php c2c_linkify_tags("book,92,programming-notes"); ?>
+<?php c2c_linkify_tags("43, 92, 102"); ?>
+<?php c2c_linkify_tags("book, movies, programming-notes"); ?>
+<?php c2c_linkify_tags("book, 92, programming-notes"); ?>
+<?php c2c_linkify_tags(array(43,92,102)); ?>
+<?php c2c_linkify_tags(array("43","92","102")); ?>
+<?php c2c_linkify_tags(array("book","movies","programming-notes")); ?>
+<?php c2c_linkify_tags(array("book",92,"programming-notes")); ?>`
 
+Though, for consistency and readability, you'd be better off sticking to specifying slugs or IDs (with a preference for the former, especially if using hardcoded values).
 
 * `<?php c2c_linkify_tags("43 92"); ?>`
 

@@ -2,6 +2,7 @@
 
 ## _(in-progress)_
 * Change: Add textdomain for lone non-widget string
+* Change: Fix Markdown formatting for code examples in readme.txt
 * Change: Note compatibility through WP 5.7+
 * Change: Update copyright date (2021)
 
