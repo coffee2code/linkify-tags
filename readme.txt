@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
 Tested up to: 5.7
-Stable tag: 2.2.5
+Stable tag: 2.2.6
 
 Turn a string, list, or array of tag IDs and/or slugs into a list of links to those tags. Provides a widget and template tag.
 
@@ -149,6 +149,13 @@ Do:
 
 == Changelog ==
 
+= 2.2.6 (2021-04-29) =
+* Change: Add textdomain for lone non-widget string
+* Change: Fix Markdown formatting for code examples in readme.txt
+* Change: Note compatibility through WP 5.7+
+* Change: Update copyright date (2021)
+* New: Add a few more possible TODO items
+
 = 2.2.5 (2020-08-18) =
 * New: Add TODO.md for newly added potential TODO items
 * Change: Restructure unit test file structure
@@ -165,18 +172,13 @@ Do:
 * Change: Update links to coffee2code.com to be HTTPS
 * Change: Update examples in documentation to use a proper example URL
 
-= 2.2.3 (2019-11-28) =
-* New: Add CHANGELOG.md and move all but most recent changelog entries into it
-* Change: Update unit test install script and bootstrap to use latest WP unit test repo
-* Change: Note compatibility through WP 5.3+
-* Change: Add link to plugin's page in Plugin Directory to README.md
-* Change: Update copyright date (2020)
-* Change: Split paragraph in README.md's "Support" section into two
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/linkify-tags/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.2.6 =
+Trivial update: noted compatibility through WP 5.7+ and updated copyright date (2021).
 
 = 2.2.5 =
 Trivial update: Restructured unit test file structure, added a TODO.md file, and noted compatibility through WP 5.5+.
