@@ -12,9 +12,12 @@ This plugin is available in the WordPress Plugin Directory: https://wordpress.or
 3. Optional: Use the `c2c_linkify_tags()` template tag in one of your templates (be sure to pass it at least the first argument indicating what tag IDs and/or slugs to linkify -- the argument can be an array, a space-separate list, or a comma-separated list). Other optional arguments are available to customize the output.
 4. Optional: Use the "Linkify Tags" widget in one of the sidebars provided by your theme.
 
+
 ## Additional Documentation
 
-See [readme.txt](https://github.com/coffee2code/linkify-tags/blob/master/readme.txt) for additional usage information. See [CHANGELOG.md](CHANGELOG.md) for the list of changes for each release.
+* See [readme.txt](https://github.com/coffee2code/linkify-tags/blob/master/readme.txt) for additional usage information.
+* See [DEVELOPER-DOCS.md](DEVELOPER-DOCS.md) for developer-related documentation on hooks and template tags.
+* See [CHANGELOG.md](CHANGELOG.md) for the list of changes for each release.
 
 
 ## Support

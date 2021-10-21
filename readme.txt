@@ -49,102 +49,17 @@ Between tags: `</li><li>`
 Yes.
 
 
-== Template Tags ==
+== Developer Documentation ==
 
-The plugin provides one template tag for use in your theme templates, functions.php, or plugins.
+Developer documentation can be found in [DEVELOPER-DOCS.md](https://github.com/coffee2code/linkify-categories/blob/master/DEVELOPER-DOCS.md). That documentation covers the template tag and hook provided by the plugin.
 
-= Functions =
+As an overview, this is the template tag provided by the plugin:
 
-* `<?php c2c_linkify_tags( $tags, $before = '', $after = '', $between = ', ', $before_last = '', $none = '' ) ?>`
-Displays links to each of any number of tags specified via tag IDs/slugs
+* `c2c_linkify_tags()` : Template tag to display links to each of any number of tags specified via tag IDs/slugs. You can customize text to show before and/or after the entire listing, between each tag, and what to display (if anything) when no tags are listed.
 
-= Arguments =
+This is the hook provided by the plugin:
 
-* `$tags`
-A single tag ID/slug, or multiple tag IDs/slugs defined via an array, or multiple tags IDs/slugs defined via a comma-separated and/or space-separated string
-
-* `$before`
-(optional) To appear before the entire tag listing (if tags exist or if 'none' setting is specified)
-
-* `$after`
-(optional) To appear after the entire tag listing (if tags exist or if 'none' setting is specified)
-
-* `$between`
-(optional) To appear between tags
-
-* `$before_last`
-(optional) To appear between the second-to-last and last element, if not specified, 'between' value is used
-
-* `$none`
-(optional) To appear when no tags have been found. If blank, then the entire function doesn't display anything
-
-= Examples =
-
-* These are all valid calls:
-
-`<?php c2c_linkify_tags(43); ?>
-<?php c2c_linkify_tags("43"); ?>
-<?php c2c_linkify_tags("books"); ?>
-<?php c2c_linkify_tags("43 92 102"); ?>
-<?php c2c_linkify_tags("book movies programming-notes"); ?>
-<?php c2c_linkify_tags("book 92 programming-notes"); ?>
-<?php c2c_linkify_tags("43,92,102"); ?>
-<?php c2c_linkify_tags("book,movies,programming-notes"); ?>
-<?php c2c_linkify_tags("book,92,programming-notes"); ?>
-<?php c2c_linkify_tags("43, 92, 102"); ?>
-<?php c2c_linkify_tags("book, movies, programming-notes"); ?>
-<?php c2c_linkify_tags("book, 92, programming-notes"); ?>
-<?php c2c_linkify_tags(array(43,92,102)); ?>
-<?php c2c_linkify_tags(array("43","92","102")); ?>
-<?php c2c_linkify_tags(array("book","movies","programming-notes")); ?>
-<?php c2c_linkify_tags(array("book",92,"programming-notes")); ?>`
-
-Though, for consistency and readability, you'd be better off sticking to specifying slugs or IDs (with a preference for the former, especially if using hardcoded values).
-
-* `<?php c2c_linkify_tags("43 92"); ?>`
-
-Outputs something like:
-
-`<a href="https://example.com/archives/tags/books">Books</a>, <a href="https://example.com/archives/tags/movies">Movies</a>`
-
-* `<?php c2c_linkify_tags("43, 92", "<li>", "</li>", "</li><li>"); ?></ul>`
-
-Outputs something like:
-
-`<ul><li><a href="https://example.com/archives/tags/books">Books</a></li><li><a href="https://example.com/archives/tags/movies">Movies</a></li></ul>`
-
-* `<?php c2c_linkify_tags(""); // Assume you passed an empty string as the first value ?>`
-
-Displays nothing.
-
-* `<?php c2c_linkify_tags("", "", "", "", "", "No related tags."); // Assume you passed an empty string as the first value ?>`
-
-Outputs:
-
-`No related tags.`
-
-
-== Hooks ==
-
-The plugin exposes one action for hooking.
-
-**c2c_linkify_tags (action)**
-
-The 'c2c_linkify_tags' hook allows you to use an alternative approach to safely invoke `c2c_linkify_tags()` in such a way that if the plugin were to be deactivated or deleted, then your calls to the function won't cause errors in your site.
-
-Arguments:
-
-* same as for `c2c_linkify_tags()`
-
-Example:
-
-Instead of:
-
-`<?php c2c_linkify_tags( "43, 92", 'Tags: ' ); ?>`
-
-Do:
-
-`<?php do_action( 'c2c_linkify_tags', "43, 92", 'Tags: ' ); ?>`
+* `c2c_linkify_tags` : Allows use of an alternative approach to safely invoke `c2c_linkify_categories()` in such a way that if the plugin were deactivated or deleted, then your calls to the function won't cause errors in your site.
 
 
 == Changelog ==
