@@ -6,7 +6,6 @@ The following list comprises ideas, suggestions, and known issues, all of which 
 
 * Add shortcode
 * Add block
-* Remove code for long-deprecated `linkify_tags()`
 * Support a `$args`-style argument array rather than numerous explicit arguments (though this is a bit moot with PHP8 features). Obviously, maintain backward-compatibility.
   * Great opportunity to add support for an optional 'echo' arg to control if function echoes.
   * Update all documentation examples to use the new syntax

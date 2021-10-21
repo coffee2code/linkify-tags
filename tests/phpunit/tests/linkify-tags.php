@@ -155,16 +155,4 @@ class Linkify_Tags_Test extends WP_UnitTestCase {
 		$this->assertEquals( $expected, $this->get_results( array( array(), '<ul><li>', '</li></ul>', '</li><li>', '', $missing ), false ) );
 	}
 
-	/**
-	 * @expectedDeprecated linkify_tags
-	 */
-	public function test_deprecated_function() {
-		$this->assertEquals( $this->expected_output( 1 ), $this->get_results( array( $this->tag_ids[0] ), false, true ) );
-		$this->assertEquals( $this->expected_output( 5 ), $this->get_results( array( $this->tag_ids ), false, true ) );
-		$tag = get_tag( $this->tag_ids[0] );
-		$this->assertEquals( $this->expected_output( 1 ), $this->get_results( array( $tag->slug ), false, true ) );
-		$tag_slugs = array_map( array( $this, 'get_slug' ), $this->tag_ids );
-		$this->assertEquals( $this->expected_output( 5 ), $this->get_results( array( $tag_slugs ), false, true ) );
-	}
-
 }

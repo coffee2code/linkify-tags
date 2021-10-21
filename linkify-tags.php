@@ -118,17 +118,3 @@ function c2c_linkify_tags( $tags, $before = '', $after = '', $between = ', ', $b
 }
 add_action( 'c2c_linkify_tags', 'c2c_linkify_tags', 10, 6 );
 endif;
-
-if ( ! function_exists( 'linkify_tags' ) ) :
-/**
- * Displays links to each of any number of tags specified via tag IDs and/or slugs
- *
- * @since 1.0
- * @deprecated 2.0 Use c2c_linkify_tags() instead
- */
-function linkify_tags( $tags, $before = '', $after = '', $between = ', ', $before_last = '', $none = '' ) {
-	_deprecated_function( 'linkify_tags', '2.0', 'c2c_linkify_tags' );
-	return c2c_linkify_tags( $tags, $before, $after, $between, $before_last, $none );
-}
-add_action( 'linkify_tags', 'linkify_tags', 10, 6 ); // Deprecated
-endif;
