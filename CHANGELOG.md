@@ -1,6 +1,13 @@
 # Changelog
 
-## _(in-progress)_
+## 2.3 _(2021-10-20)_
+
+### Highlights:
+
+This minor release removes support for the long-deprecated `linkify_tags()`, adds DEVELOPER-DOCS.md, notes compatibility through WP 5.8+, and minor reorganization and tweaks to unit tests.
+
+### Details:
+
 * Change: Remove long-deprecated function `linkify_tags()`
 * New: Add DEVELOPER-DOCS.md and move template tag and hooks documentation into it
 * Change: Tweak installation instruction
