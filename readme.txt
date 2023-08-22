@@ -51,7 +51,7 @@ Yes.
 
 == Developer Documentation ==
 
-Developer documentation can be found in [DEVELOPER-DOCS.md](https://github.com/coffee2code/linkify-categories/blob/master/DEVELOPER-DOCS.md). That documentation covers the template tag and hook provided by the plugin.
+Developer documentation can be found in [DEVELOPER-DOCS.md](https://github.com/coffee2code/linkify-tags/blob/master/DEVELOPER-DOCS.md). That documentation covers the template tag and hook provided by the plugin.
 
 As an overview, this is the template tag provided by the plugin:
 

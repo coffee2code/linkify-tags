@@ -17,10 +17,10 @@ Displays links to each of any number of tags specified via tag IDs/slugs
 A single tag ID/slug, or multiple tag IDs/slugs defined via an array, or multiple tag IDs/slugs defined via a comma-separated and/or space-separated string
 
 * `$before` _(string)_
-Optional. Text to appear before the entire tag listing (if posts exist or if 'none' setting is specified). Default is an empty string.
+Optional. Text to appear before the entire tag listing (if tags exist or if 'none' setting is specified). Default is an empty string.
 
 * `$after` _(string)_
-Optional. Text to appear after the entire tag listing (if posts exist or if 'none' setting is specified). Default is an empty string.
+Optional. Text to appear after the entire tag listing (if tags exist or if 'none' setting is specified). Default is an empty string.
 
 * `$between` _(string)_
 Optional. Text to appear between tags. Default is ", ".
