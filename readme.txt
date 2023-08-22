@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
 Tested up to: 6.3
-Stable tag: 2.3
+Stable tag: 2.3.1
 
 Turn a string, list, or array of tag IDs and/or slugs into a list of links to those tags. Provides a widget and template tag.
 
@@ -64,6 +64,16 @@ This is the hook provided by the plugin:
 
 == Changelog ==
 
+= 2.3.1 (2023-08-22) =
+* Fix: Fix some typos in documentation
+* Change: Note compatibility through WP 6.3+
+* Change: Update copyright date (2023)
+* New: Add `.gitignore` file
+* Unit tests:
+    * Allow tests to run against current versions of WordPress
+    * New: Add `composer.json` for PHPUnit Polyfill dependency
+    * Change: Prevent PHP warnings due to missing core-related generated files
+
 = 2.3 (2021-10-20) =
 Highlights:
 
@@ -90,20 +100,13 @@ Details:
 * Change: Update copyright date (2021)
 * New: Add a few more possible TODO items
 
-= 2.2.5 (2020-08-18) =
-* New: Add TODO.md for newly added potential TODO items
-* Change: Restructure unit test file structure
-    * New: Create new subdirectory `phpunit/` to house all files related to unit testing
-    * Change: Move `bin/` to `phpunit/bin/`
-    * Change: Move `tests/bootstrap.php` to `phpunit/`
-    * Change: Move `tests/` to `phpunit/tests/`
-    * Change: Rename `phpunit.xml` to `phpunit.xml.dist` per best practices
-* Change: Note compatibility through WP 5.5+
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/linkify-tags/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.3.1 =
+Trivial update: noted compatibility through WP 6.3+, updated unit tests to run against latest WordPress, fixed some typos in inline documentation, and updated copyright date (2023)
 
 = 2.3 =
 Minor update: removed support for long-deprecated `linkify_tags()`, added DEVELOPER-DOCS.md, noted compatibility through WP 5.8+, and minor reorganization and tweaks to unit tests
