@@ -1,6 +1,12 @@
 # Changelog
 
 ## _(in-progress)_
+* Widget:
+    * New: Extract base widget functionality common amongst my Linkify family of plugins into reusable base class
+    * Change: Improve spacing in block editor around widget input field help text
+    * New: Add `get_config()` to retrieve configuration
+    * Hardening: Escape some variables prior to being output
+    * New: Add unit tests
 * New: Extract code for creating link to category's archive into new `__c2c_linkify_tags_get_tag_link()`
 * Change: Tweak descriptions to clarify that the links are to each tag's archive
 * Change: Add default values for optional arguments to inline parameter documentation
