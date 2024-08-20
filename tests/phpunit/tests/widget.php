@@ -64,7 +64,7 @@ class Linkify_Widget_Test extends WP_UnitTestCase {
 	}
 
 	public function test_widget_version() {
-		$this->assertEquals( '004', c2c_LinkifyTagsWidget::version() );
+		$this->assertEquals( '005', c2c_LinkifyTagsWidget::version() );
 	}
 
 	public function test_widget_framework_class_name() {

@@ -6,7 +6,7 @@
  *
  * @package Linkify_Tags_Widget
  * @author  Scott Reilly
- * @version 004
+ * @version 005
  */
 
 defined( 'ABSPATH' ) or die();
@@ -23,7 +23,7 @@ class c2c_LinkifyTagsWidget extends c2c_LinkifyWidget {
 	 * @since 004
 	 */
 	public static function version() {
-		return '004';
+		return '005';
 	}
 
 	/**

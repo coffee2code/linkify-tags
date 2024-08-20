@@ -8,6 +8,7 @@
     * New: Add `get_config()` to retrieve configuration
     * Hardening: Escape some variables prior to being output
     * New: Add unit tests
+    * Change: Update version to 005
 * New: Extract code for creating link to category's archive into new `__c2c_linkify_tags_get_tag_link()`
 * Change: Tweak descriptions to clarify that the links are to each tag's archive
 * Change: Add default values for optional arguments to inline parameter documentation
