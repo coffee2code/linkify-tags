@@ -1,7 +1,7 @@
 === Linkify Tags ===
 Contributors: coffee2code
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6ARCFJ9TX3522
-Tags: tags, link, linkify, archives, list, widget, template tag, coffee2code
+Tags: tag, tags, link, linkify, widget
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
