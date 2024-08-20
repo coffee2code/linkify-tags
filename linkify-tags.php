@@ -83,15 +83,10 @@ function c2c_linkify_tags( $tags, $before = '', $after = '', $between = ', ', $b
 			if ( ! $tag ) {
 				continue;
 			}
-			$title = $tag->name;
-			if ( $title ) {
-				$links[] = sprintf(
-					'<a href="%1$s" title="%2$s">%3$s</a>',
-					esc_url( get_tag_link( $id ) ),
-					/* translators: %s: Tag's name */
-					esc_attr( sprintf( __( 'View all posts in %s', 'linkify-tags' ), $title ) ),
-					esc_attr( $title )
-				);
+
+			$link = __c2c_linkify_tags_get_tag_link( $id );
+			if ( $link ) {
+				$links[] = $link;
 			}
 		}
 		if ( empty( $before_last ) ) {
@@ -122,3 +117,32 @@ function c2c_linkify_tags( $tags, $before = '', $after = '', $between = ', ', $b
 }
 add_action( 'c2c_linkify_tags', 'c2c_linkify_tags', 10, 6 );
 endif;
+
+/**
+ * Returns the archive link for a tag.
+ *
+ * @access private
+ *
+ * @param int $tag_id The tag ID.
+ * @return string
+ */
+function __c2c_linkify_tags_get_tag_link( $tag_id ) {
+	$tag = get_tag( $tag_id );
+	$title = '';
+
+	if ( is_object( $tag ) ) {
+		$title = $tag->name;
+	}
+
+	if ( ! $title ) {
+		return '';
+	}
+
+	return sprintf(
+		'<a href="%1$s" title="%2$s">%3$s</a>',
+		esc_url( get_tag_link( $tag_id ) ),
+		/* translators: %s: Tag's name */
+		esc_attr( sprintf( __( "View all posts in %s", 'linkify-tags' ), $title ) ),
+		esc_attr( $title )
+	);
+}

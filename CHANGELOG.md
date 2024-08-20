@@ -1,6 +1,7 @@
 # Changelog
 
 ## _(in-progress)_
+* New: Extract code for creating link to category's archive into new `__c2c_linkify_tags_get_tag_link()`
 * Change: Tweak descriptions to clarify that the links are to each tag's archive
 * Change: Add default values for optional arguments to inline parameter documentation
 * Change: Note compatibility through WP 6.6+

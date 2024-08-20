@@ -155,4 +155,30 @@ class Linkify_Tags_Test extends WP_UnitTestCase {
 		$this->assertEquals( $expected, $this->get_results( array( array(), '<ul><li>', '</li></ul>', '</li><li>', '', $missing ), false ) );
 	}
 
+	/*
+	 * __c2c_linkify_tags_get_tag_link()
+	 */
+
+	 public function test___c2c_linkify_tags_get_tag_link() {
+		$tag = get_tag( $this->tag_ids[0] );
+		$title = $tag->name;
+		$slug = $tag->slug;
+
+		$expected = sprintf(
+			'<a href="http://example.org/?tag=%s" title="View all posts in %s">%s</a>',
+			$slug,
+			esc_attr( $title ),
+			esc_html( $title )
+		);
+
+		$this->assertEquals(
+			$expected,
+			__c2c_linkify_tags_get_tag_link( $this->tag_ids[0] )
+		);
+	}
+
+	public function test___c2c_linkify_tags_get_tag_link_with_invalid_id() {
+		$this->assertEmpty( __c2c_linkify_tags_get_tag_link( -1 ) );
+	}
+
 }
