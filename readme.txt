@@ -8,7 +8,7 @@ Requires at least: 3.3
 Tested up to: 6.6
 Stable tag: 2.3.1
 
-Turn a string, list, or array of tag IDs and/or slugs into a list of links to those tags. Provides a widget and template tag.
+Turn a string, list, or array of tag IDs and/or slugs into a list of links to those tag archives. Provides a widget and template tag.
 
 == Description ==
 
