@@ -5,6 +5,9 @@
  * @package Linkify_Tags
  */
 
+// Prevent web access.
+( php_sapi_name() !== 'cli' ) && die();
+
 define( 'LINKIFY_TAGS_PLUGIN_DIR',  dirname( __FILE__, 3 ) );
 define( 'LINKIFY_TAGS_PLUGIN_FILE', LINKIFY_TAGS_PLUGIN_DIR . '/linkify-tags.php' );
 
