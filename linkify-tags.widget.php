@@ -71,7 +71,7 @@ class c2c_LinkifyTagsWidget extends c2c_LinkifyWidget {
 			),
 			'none' => array(
 				'input'   => 'text',
-				'default' => '',
+				'default' => __( 'No tags specified to be displayed', 'linkify-tags' ),
 				'label'   => __( 'None text', 'linkify-tags' ),
 				'help'   => __( 'Text to appear when no tags have been found.  If blank, then the entire function doesn\'t display anything.', 'linkify-tags' ),
 			),

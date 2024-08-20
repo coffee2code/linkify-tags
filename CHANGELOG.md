@@ -3,6 +3,7 @@
 ## _(in-progress)_
 * Widget:
     * New: Extract base widget functionality common amongst my Linkify family of plugins into reusable base class
+    * Change: Define a default 'none' message so that something is shown when no tags are specified
     * Change: Improve spacing in block editor around widget input field help text
     * New: Add `get_config()` to retrieve configuration
     * Hardening: Escape some variables prior to being output
