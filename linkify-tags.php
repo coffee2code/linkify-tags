@@ -51,11 +51,11 @@ if ( ! function_exists( 'c2c_linkify_tags' ) ) :
  *
  * @param int|string|array $tags A single tag ID/slug, or multiple tag IDs/slugs defined via an array, or multiple tag IDs/slugs defined
  *                               via a comma-separated and/or space-separated string.
- * @param string $before         Optional. Text to appear before the entire tag listing (if tags exist or if 'none' setting is specified).
- * @param string $after          Optional. Text to appear after the entire tag listing (if tags exist or if 'none' setting is specified).
- * @param string $between        Optional. Text to appear between all tags.
- * @param string $before_last    Optional. Text to appear between the second-to-last and last element, if not specified, 'between' value is used.
- * @param string $none           Optional. Text to appear when no tags have been found.  If blank, then the entire function doesn't display anything.
+ * @param string $before         Optional. Text to appear before the entire tag listing (if tags exist or if 'none' setting is specified). Default empty string.
+ * @param string $after          Optional. Text to appear after the entire tag listing (if tags exist or if 'none' setting is specified). Default empty string.
+ * @param string $between        Optional. Text to appear between all tags. Default ', '.
+ * @param string $before_last    Optional. Text to appear between the second-to-last and last element, if not specified, 'between' value is used. Default empty string.
+ * @param string $none           Optional. Text to appear when no tags have been found.  If blank, then the entire function doesn't display anything. Default empty string.
  */
 function c2c_linkify_tags( $tags, $before = '', $after = '', $between = ', ', $before_last = '', $none = '' ) {
 	if ( empty( $tags ) ) {
