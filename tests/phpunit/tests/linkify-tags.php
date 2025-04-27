@@ -145,6 +145,22 @@ class Linkify_Tags_Test extends WP_UnitTestCase {
 		$this->assertEquals( $expected, $this->get_results( array( array(), '<ul><li>', '</li></ul>', '</li><li>', '', $missing ) ) );
 	}
 
+	public function test_unsafe_markup_is_omitted() {
+		$before_last = ', and ';
+		$boom = 'alert("boom!");';
+		$expected = $boom . $this->expected_output( 1, 0 ) . $before_last . $boom . $this->expected_output( 1, 1, "," ) . $boom;
+		$this->assertEquals(
+			$expected,
+			$this->get_results( array(
+				array_slice( $this->tag_ids, 0, 2 ),
+				"<script>$boom</script>",
+				"<script>$boom</script>",
+				"<script>$boom</script>",
+				$before_last . "<script>$boom</script>"
+			) )
+		);
+	}
+
 	/*
 	 * __c2c_linkify_tags_get_tag_link()
 	 */

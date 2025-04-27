@@ -111,9 +111,8 @@ function c2c_linkify_tags( $tags, $before = '', $after = '', $between = ', ', $b
 		$response = $none;
 	}
 
-	// Output categories (which is permitted to include markup).
-	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	echo $before . $response . $after;
+	// Output categories.
+	echo wp_kses_post( $before . $response . $after );
 }
 add_action( 'c2c_linkify_tags', 'c2c_linkify_tags', 10, 6 );
 endif;
