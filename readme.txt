@@ -5,7 +5,7 @@ Tags: tag, tags, link, linkify, widget
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
-Tested up to: 6.6
+Tested up to: 6.8
 Stable tag: 2.4
 
 Turn a string, list, or array of tag IDs and/or slugs into a list of links to those tag archives. Provides a widget and template tag.
