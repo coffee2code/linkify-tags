@@ -6,7 +6,7 @@ class Linkify_Widget_Test extends WP_UnitTestCase {
 
 	private $tag_ids = array();
 
-	public function setUp() {
+	public function setUp(): void {
 		parent::setUp();
 		$this->tag_ids = $this->factory->tag->create_many( 5 );
 	}
