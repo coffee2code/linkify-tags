@@ -6,7 +6,7 @@
  *
  * @package Linkify_Tags_Widget
  * @author  Scott Reilly
- * @version 005
+ * @version 006
  */
 
 defined( 'ABSPATH' ) or die();
@@ -15,7 +15,7 @@ require_once( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'linkify-widget.php' )
 
 if ( class_exists( 'WP_Widget' ) && ! class_exists( 'c2c_LinkifyTagsWidget' ) ) :
 
-class c2c_LinkifyTagsWidget extends c2c_LinkifyWidget {
+class c2c_LinkifyTagsWidget extends c2c_LinkifyWidget_006 {
 
 	/**
 	 * Returns the version of the widget.
@@ -23,7 +23,7 @@ class c2c_LinkifyTagsWidget extends c2c_LinkifyWidget {
 	 * @since 004
 	 */
 	public static function version() {
-		return '005';
+		return '006';
 	}
 
 	/**
