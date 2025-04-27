@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 3.3
 Tested up to: 6.8
-Stable tag: 2.4
+Stable tag: 2.5
 
 Turn a string, list, or array of tag IDs and/or slugs into a list of links to those tag archives. Provides a widget and template tag.
 
@@ -64,6 +64,19 @@ This is the hook provided by the plugin:
 
 == Changelog ==
 
+= 2.5 (2025-04-27) =
+* Hardening: Prevent unsafe markup from being output
+* Update widget base class to v006:
+    * Hardening: Prevent unsafe markup from being output
+    * Change: Include version number in class name to ensure use of expected version
+    * Change: Move PHPCS-related inline comments with their associated `phpcs:ignore` comments
+* Change: Note compatibility through WP 6.8+
+* Change: Note compatibility through PHP 8.3+
+* Change: Update copyright date (2025)
+* Unit tests:
+    * Change: Remove vestiges of testing for now-removed `linkify_categories()`
+    * Change: Explicitly define return type for overridden methods
+
 = 2.4 (2024-08-20) =
 Highlights:
 
@@ -101,29 +114,13 @@ Details:
     * New: Add `composer.json` for PHPUnit Polyfill dependency
     * Change: Prevent PHP warnings due to missing core-related generated files
 
-= 2.3 (2021-10-20) =
-Highlights:
-
-This minor release removes support for the long-deprecated `linkify_tags()`, adds DEVELOPER-DOCS.md, notes compatibility through WP 5.8+, and minor reorganization and tweaks to unit tests.
-
-Details:
-
-* Change: Remove long-deprecated function `linkify_tags()`
-* New: Add DEVELOPER-DOCS.md and move template tag and hooks documentation into it
-* Change: Tweak installation instruction
-* Change: Note compatibility through WP 5.8+
-* Unit tests:
-    * Change: Restructure unit test directories
-        * Change: Move `phpunit/` into `tests/phpunit/`
-        * Change: Move `phpunit/bin/` into `tests/`
-    * Change: Remove 'test-' prefix from unit test file
-    * Change: In bootstrap, store path to plugin file constant
-    * Change: In bootstrap, add backcompat for PHPUnit pre-v6.0
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/linkify-tags/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 2.5 =
+Recommended update: prevented unsafe markup from being output, versioned widget base class to ensure use of expected version, noted compatibility through WP 6.8+ and PHP 8.3+, and updated copyright date (2025)
 
 = 2.4 =
 Recommended update: improved widget implementation, added some hardening measures, noted compatibility through WP 6.6+, removed unit tests from release packaging, updated copyright date (2024), and other code improvements and minor changes.
