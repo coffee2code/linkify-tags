@@ -13,6 +13,8 @@ Displays links to each of any number of tags specified via tag IDs/slugs
 
 ### Arguments
 
+_Note: Unsafe markup (such as `script`) will be omitted from any string being output._
+
 * `$tags` _(string|int|array)_
 A single tag ID/slug, or multiple tag IDs/slugs defined via an array, or multiple tag IDs/slugs defined via a comma-separated and/or space-separated string
 
